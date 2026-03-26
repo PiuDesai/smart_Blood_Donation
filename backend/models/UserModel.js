@@ -168,8 +168,11 @@ const userSchema = new mongoose.Schema(
     lockUntil: {
       type: Date,
       select: false
-    }
+    },
+
+     
   },
+ 
   {
     timestamps: true
   }
