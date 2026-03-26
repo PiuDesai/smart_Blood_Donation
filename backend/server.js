@@ -3,6 +3,8 @@ const Database = require('./config/db');
 const cors = require("cors");
 
 const userRoutes = require("./routes/UserRoute.js");
+const bloodBankRoutes = require("./routes/bloodBankRoutes.js");
+const campRoutes = require("./routes/campRoutes.js");
 
 const app = express();
 const PORT = 5000;
@@ -21,6 +23,8 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/blood-bank", bloodBankRoutes);
+app.use("/api/camps", campRoutes);
 
 // ✅ ONLY ONE error handler (VERY IMPORTANT)
 app.use((err, req, res, next) => {
